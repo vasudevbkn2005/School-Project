@@ -103,14 +103,14 @@
                         <li class="nav-item dropdown">
                             <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"
                                 aria-expanded="false"> <img src="/img/profile.jpg" alt="user-img" width="36"
-                                    class="img-circle"><span>Admin</span></span> </a>
+                                    class="img-circle"><span>{{ Auth::user()->name }}</span></span> </a>
                             <ul class="dropdown-menu dropdown-user">
                                 <li>
                                     <div class="user-box">
                                         <div class="u-img"><img src="/img/profile.jpg" alt="user"></div>
                                         <div class="u-text">
-                                            <h4>Admin</h4>
-                                            <p class="text-muted">Admin@gmail.com</p><a href="#"
+                                            <h4>{{ Auth::user()->name }}</h4>
+                                            <p class="text-muted">{{ Auth::user()->email }}</p><a href="#"
                                                 class="btn btn-rounded btn-danger btn-sm">View Profile</a>
                                         </div>
                                     </div>
@@ -139,7 +139,7 @@
                     <div class="info">
                         <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                             <span>
-                                Admin
+                               {{ Auth::user()->name }}
                                 <span class="user-level">Administrator</span>
                                 <span class="caret"></span>
                             </span>
@@ -209,7 +209,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#">
+                        <a href="{{route('exam.index')}}">
                             <i class="la la-graduation-cap"></i>
                             <p>Exam</p>
                         </a>

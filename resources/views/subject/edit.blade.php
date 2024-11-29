@@ -10,7 +10,7 @@
                     <div class="container">
 
                         {{-- @foreach ($teacher as $info) --}}
-                        <form action="/subject/{{ $subject['id'] }}" method="POST">
+                        <form action="/subject/{{ $subject['id'] }}" method="POST" autocomplete="off">
                             @csrf
                             @method('PUT')
                             <div class="form-group">

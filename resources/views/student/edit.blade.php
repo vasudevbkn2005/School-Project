@@ -10,7 +10,7 @@
                 @endforeach
                 <!-- Edit student Form -->
                 <div class="container">
-                    <form action="/student/{{ $student['id'] }}" method="POST" enctype="multipart/form-data">
+                    <form action="/student/{{ $student['id'] }}" autocomplete="off" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
 

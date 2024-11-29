@@ -9,7 +9,7 @@
 
                 <div class="container">
                     <!-- Update Class Form -->
-                    <form action="{{ route('classes.update', $classes->id) }}" method="POST">
+                    <form action="{{ route('classes.update', $classes->id) }}" method="POST" autocomplete="off">
                         @csrf
                         @method('PUT')
 

@@ -20,7 +20,7 @@
                     @endif
 
                     <!-- Add class form -->
-                    <form action="{{ route('classes.store') }}" method="POST">
+                    <form action="{{ route('classes.store') }}" method="POST" autocomplete="off">
                         @csrf
 
                         <!-- Class Name -->

@@ -8,7 +8,7 @@
                         <h4 class="page-title text-center">Add Subject</h4>
                         <a href="{{ route('subject.index') }}" class="btn btn-success">Go Back</a>
                         <div class="container">
-                            <form action="{{route('subject.store')}}" method="POST" enctype="multipart/form-data">
+                            <form action="{{route('subject.store')}}" autocomplete="off" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <label for="name">Subject Name</label>

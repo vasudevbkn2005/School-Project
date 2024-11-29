@@ -1,10 +1,15 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\ClassesController;
+use App\Http\Controllers\ExamController;
+use App\Http\Controllers\ExamNameController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\TypeController;
+use App\Models\ExamName;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -41,6 +46,16 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     // Student
     Route::resource('student', StudentController::class);
+
+    // Exam
+    Route::resource('exam', ExamController::class);
+
+    // Type
+    Route::resource('type', TypeController::class);
+
+    // Name
+    Route::resource('ExamName', ExamNameController::class);
+
 });
 
 

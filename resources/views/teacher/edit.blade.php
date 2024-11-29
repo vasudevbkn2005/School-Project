@@ -10,7 +10,7 @@
                 <div class="container">
 
                     {{-- @foreach ($teacher as $info) --}}
-                    <form action="/teacher/{{ $teacher['id'] }}" method="POST" enctype="multipart/form-data">
+                    <form action="/teacher/{{ $teacher['id'] }}" method="POST" enctype="multipart/form-data" autocomplete="off">
                         @csrf
                         @method('PUT')
 

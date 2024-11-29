@@ -7,7 +7,7 @@
                 <h4 class="page-title text-center">Add Student</h4>
                 <a href="{{ route('student.index') }}" class="btn btn-success">Go Back</a>
                 <div class="container">
-                    <form action="{{ route('student.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('student.store') }}" autocomplete="off" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="name">Student Name:</label>

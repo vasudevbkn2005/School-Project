@@ -6,7 +6,7 @@
                 <h4 class="page-title text-center">Add Teacher</h4>
                 <a href="{{ route('teacher.index') }}" class="btn btn-success">Go Back</a>
                 <div class="container">
-                    <form action="/teacher/" method="POST" enctype="multipart/form-data">
+                    <form action="/teacher/" method="POST" enctype="multipart/form-data" autocomplete="off">
                         @csrf
                         <div class="form-group">
                             <label for="name">Teacher Name</label>
