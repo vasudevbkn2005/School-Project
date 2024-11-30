@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Classes;
+use App\Models\Fees;
+use App\Models\Student;
+use App\Models\Teacher;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -16,7 +20,17 @@ class AdminController extends Controller
 
     public function dashboard()
     {
-        return view('Admin.index');
+        return view('Admin.index', [
+            'totalStudents' => Student::count(),
+            'totalTeachers' => Teacher::count(),
+            'totalClasses' => Classes::count(),
+            'pendingFees' => Fees::where('status', 'pending')->sum('fees'),
+            'recentActivities' => [
+                ['description' => 'New student enrolled: John Doe', 'time' => '2 hours ago'],
+                ['description' => 'Fee payment received from Jane Smith', 'time' => '1 day ago'],
+                ['description' => 'Class 10A schedule updated', 'time' => '3 days ago'],
+            ],
+        ]);
     }
 
     /**
