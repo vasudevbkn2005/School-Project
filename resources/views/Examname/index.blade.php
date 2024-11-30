@@ -11,7 +11,7 @@
                     </div>
                     <div class="col-md-6 text-end">
                         <a href="{{ route('exam.index') }}" class="btn btn-success">
-                            <i class="fa fa-plus"></i> Add Examination
+                            <i class="fa fa-plus"></i> Add Exam
                         </a>
                           <a href="{{ route('ExamName.create') }}" class="btn btn-warning">
                             <i class="fa fa-plus"></i> Add Exam Name

@@ -221,7 +221,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#">
+                        <a href="{{route('fees.index')}}">
                             <i class="la la-book"></i>
                             <p>Fees</p>
                         </a>

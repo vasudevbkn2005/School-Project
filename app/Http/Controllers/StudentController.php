@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Classes;
+use App\Models\Fees;
 use App\Models\Section;
 use App\Models\Student;
 use Illuminate\Http\Request;
@@ -15,8 +16,11 @@ class StudentController extends Controller
      */
     public function index()
     {
+        $fees = Fees::all();
+        $students = Student::all();
+        $classes = Classes::all();
         $student = Student::all();
-        return view('student.index',compact('student'));
+        return view('student.index',compact('student','students','classes','fees'));
     }
 
     /**

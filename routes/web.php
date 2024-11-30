@@ -5,6 +5,7 @@ use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\ClassesController;
 use App\Http\Controllers\ExamController;
 use App\Http\Controllers\ExamNameController;
+use App\Http\Controllers\FeesController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TeacherController;
@@ -27,6 +28,12 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin', [AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::resource('teacher', TeacherController::class);
+
+
+    // Fees
+    Route::get('/fees/get-fees/{classId}', [FeesController::class, 'getFeesDetails'])->name('fees.getDetails');
+    Route::get('/fees/{fees}/edit', [FeesController::class, 'edit'])->name('fees.edit');
+    Route::resource('fees', FeesController::class);
 
     // Subject
     Route::get('/subject', [SubjectController::class, 'index'])->name('subject.index');
