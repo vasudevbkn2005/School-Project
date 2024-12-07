@@ -6,6 +6,7 @@ use App\Http\Controllers\ClassesController;
 use App\Http\Controllers\ExamController;
 use App\Http\Controllers\ExamNameController;
 use App\Http\Controllers\FeesController;
+use App\Http\Controllers\FrontController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TeacherController;
@@ -67,8 +68,12 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+Route::get('/teacherdesign',[FrontController::class,'teacherdesign']);
+Route::get('/studentdesign', [FrontController::class, 'studentdesign']);
+Route::get('/teacherdetail/{id}', [FrontController::class, 'show']);
 
 // Route::middleware(['auth'])->group(function () {
 // Route::get('/admin', function () {

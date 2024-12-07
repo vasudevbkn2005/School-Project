@@ -122,8 +122,19 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#"><i class="ti-settings"></i> Account
                                     Setting</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><i class="fa fa-power-off"></i> Logout</a>
+                                <div aria-labelledby="navbarDropdown" class="nav-item">
+                                    <a class="dropdown-item" style="color: black; text-align: center"
+                                        href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
                             </ul>
                         </li>
                     </ul>
@@ -139,7 +150,7 @@
                     <div class="info">
                         <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                             <span>
-                               {{ Auth::user()->name }}
+                                {{ Auth::user()->name }}
                                 <span class="user-level">Administrator</span>
                                 <span class="caret"></span>
                             </span>
@@ -209,7 +220,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('exam.index')}}">
+                        <a href="{{ route('exam.index') }}">
                             <i class="la la-graduation-cap"></i>
                             <p>Exam</p>
                         </a>
@@ -221,7 +232,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('fees.index')}}">
+                        <a href="{{ route('fees.index') }}">
                             <i class="la la-book"></i>
                             <p>Fees</p>
                         </a>
@@ -266,4 +277,5 @@
     <script src="/js/ready.min.js"></script>
     @stack('scripts')
 </body>
+
 </html>
